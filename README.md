@@ -158,16 +158,13 @@ Java REST API development typically involves a combination of frameworks, librar
 5. **Documentation is Essential**: Comprehensive API documentation (e.g., Swagger) reduces onboarding time for developers.
 6. **Versioning for Stability**: API versioning ensures backward compatibility for clients.
 7. **Testing Saves Time**: Automated tests reduce bugs and regression issues.
-8. **Framework Benefits**: Modern frameworks like Spring Boot simplify development with built-in features like dependency injection, data binding, and request routing.
-
-Here’s a Java program that demonstrates handling HTTP requests and parsing JSON responses for a REST API. The program fetches data from a public API (e.g., OpenWeatherMap) and displays specific information.
-
+8. **Framework Benefits**: Modern frameworks like Spring Boot simplify development with built-in features like dependency injection, data binding, and request routing..
 
 ***DELIVERABLE: A JAVA PROGRAM THAT HANDLES HTTP REQUESTS AND PARSES JSON RESPONSES.***
 
  **Code Implementation**
 
-java
+//java
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -228,7 +225,7 @@ public static void main(String[] args) {
 ### **Steps to Use This Program**
 
 1. **Set Up Dependencies**:
-   - Use the `org.json` library for JSON parsing. Download it from [here](https://github.com/stleary/JSON-java) or add it to your project as a dependency.
+   - Use the `org.json` library for JSON parsing. add it to your project as a dependency.
    - If using Maven, include this dependency in your `pom.xml`:
    xml
      <dependency>
@@ -259,5 +256,5 @@ public static void main(String[] args) {
 - Enhance the program to accept user input for the city or other parameters.
 - Add error handling for invalid API keys, network issues, or malformed responses.
 
-Would you like additional features or guidance on integrating this into a larger application?
+
 
