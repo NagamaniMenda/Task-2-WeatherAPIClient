@@ -176,10 +176,14 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class RestApiHandler 
+
 {
+
 public static void main(String[] args) 
+
 {
-        // Replace with your API endpoint and key (if required)
+
+ // Replace with your API endpoint and key (if required)
 
 String city = "London"; // Example: Fetch weather for London
    
@@ -202,21 +206,26 @@ String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&
                     .build();
 
   Step 3: Send the request and get the response
+  
 HttpResponse<String> response client.send(request,HttpResponse.BodyHandlers.ofString());
 
    Step 4: Parse JSON response
-            if (response.statusCode() == 200) {
+   
+   if (response.statusCode() == 200)
+            {
                 String responseBody = response.body();
-                JSONObject jsonResponse = new JSONObject(responseBody);
+                
+   JSONObject jsonResponse = new JSONObject(responseBody);
 
-  Extract weather description
+  //Extract weather description
                 JSONArray weatherArray = jsonResponse.getJSONArray("weather");
+                
 String weatherDescription = weatherArray.getJSONObject(0).getString("description");
 
-  Extract temperature
+ // Extract temperature
                 double tempCelsius = jsonResponse.getJSONObject("main").getDouble("temp");
 
-   Display extracted data
+  // Display extracted data
                 System.out.println("City: " + city);
                 System.out.println("Weather: " + weatherDescription);
                 System.out.println("Temperature: " + tempCelsius + "°C");
