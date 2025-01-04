@@ -176,13 +176,18 @@ public class RestApiHandler
 {
 public static void main(String[] args) {
         // Replace with your API endpoint and key (if required)
-        String city = "London"; // Example: Fetch weather for London
-        String apiKey = "your_api_key"; // Replace with your API key
-        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
+
+      
+   String city = "London"; // Example: Fetch weather for London
+   
+ String apiKey = "your_api_key"; // Replace with your API key
+ 
+String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
 
    try {
              Step 1: Create an HTTP client
-            HttpClient client = HttpClient.newHttpClient();
+             
+   HttpClient client = HttpClient.newHttpClient();
 
    Step 2: Create an HTTP request
             HttpRequest request = HttpRequest.newBuilder()
@@ -191,7 +196,7 @@ public static void main(String[] args) {
                     .build();
 
   Step 3: Send the request and get the response
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+HttpResponse<String> response client.send(request,HttpResponse.BodyHandlers.ofString());
 
    Step 4: Parse JSON response
             if (response.statusCode() == 200) {
@@ -200,7 +205,7 @@ public static void main(String[] args) {
 
   Extract weather description
                 JSONArray weatherArray = jsonResponse.getJSONArray("weather");
-                String weatherDescription = weatherArray.getJSONObject(0).getString("description");
+String weatherDescription = weatherArray.getJSONObject(0).getString("description");
 
   Extract temperature
                 double tempCelsius = jsonResponse.getJSONObject("main").getDouble("temp");
@@ -225,8 +230,8 @@ public static void main(String[] args) {
 ### **Steps to Use This Program**
 
 1. **Set Up Dependencies**:
-   - Use the `org.json` library for JSON parsing. add it to your project as a dependency.
-   - If using Maven, include this dependency in your `pom.xml`:
+   - Use the "org.json" library for JSON parsing. add it to your project as a dependency.
+   - If using Maven, include this dependency in your "pom.xml":
    xml
      <dependency>
          <groupId>org.json</groupId>
@@ -236,23 +241,20 @@ public static void main(String[] args) {
      
 
 2. **Replace API Key**:
-   - Register for an API key on OpenWeatherMap or another REST API service and replace the placeholder `your_api_key` in the program.
+   - Register for an API key on OpenWeatherMap or another REST API service and replace the placeholder "your_api_key"in the program.
 
 3. **Compile and Run**:
-   - Compile: `javac RestApiHandler.java`
-   - Run: `java RestApiHandler`
+   - Compile: javac RestApiHandler.java
+   - Run: java RestApiHandler
 
 4. **Output Example**:
-   ```
+
    City: London
    Weather: clear sky
    Temperature: 15.87°C
-   ```
-
----
 
 ### **Customization**
-- Replace `apiUrl` with the endpoint of your choice for different APIs.
+- Replace "apiUrl" with the endpoint of your choice for different APIs.
 - Enhance the program to accept user input for the city or other parameters.
 - Add error handling for invalid API keys, network issues, or malformed responses.
 
