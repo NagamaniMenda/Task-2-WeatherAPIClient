@@ -78,7 +78,7 @@ Java REST API development typically involves a combination of frameworks, librar
 - **Quarkus**:
   - A Kubernetes-native framework optimized for Java REST APIs and cloud environments.
 
-### **2. Tools for API Testing and Documentation**
+**2. Tools for API Testing and Documentation**
 - **Postman**:
   - A widely used tool for testing and debugging APIs.
 - **Swagger/OpenAPI**:
@@ -162,27 +162,36 @@ Java REST API development typically involves a combination of frameworks, librar
  **Code Implementation**
 
 //java
+
 import java.net.URI;
+
 import java.net.http.HttpClient;
+
 import java.net.http.HttpRequest;
+
 import java.net.http.HttpResponse;
+
 import org.json.JSONArray;
+
 import org.json.JSONObject;
 
 public class RestApiHandler 
 {
-public static void main(String[] args) {
+public static void main(String[] args) 
+{
         // Replace with your API endpoint and key (if required)
 
-      
-   String city = "London"; // Example: Fetch weather for London
+String city = "London"; // Example: Fetch weather for London
    
  String apiKey = "your_api_key"; // Replace with your API key
  
 String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
 
-   try {
-             Step 1: Create an HTTP client
+   try
+   
+   {
+   
+ Step 1: Create an HTTP client
              
    HttpClient client = HttpClient.newHttpClient();
 
@@ -224,7 +233,7 @@ String weatherDescription = weatherArray.getJSONObject(0).getString("description
 
 
 
-### **Steps to Use This Program**
+**Steps to Use This Program**
 
 1. **Set Up Dependencies**:
    - Use the "org.json" library for JSON parsing. add it to your project as a dependency.
@@ -250,7 +259,7 @@ String weatherDescription = weatherArray.getJSONObject(0).getString("description
    Weather: clear sky
    Temperature: 15.87°C
 
-### **Customization**
+**Customization**
 - Replace "apiUrl" with the endpoint of your choice for different APIs.
 - Enhance the program to accept user input for the city or other parameters.
 - Add error handling for invalid API keys, network issues, or malformed responses.
